@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="EN-GB">
+<head>
+    <title>Space Hit !!!</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Banh Ngoc Nhu Y">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+        }
+        .gradientbg {
+            /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+            background: linear-gradient(-180deg, black, #252525, #787879,#787879,#252525,black );
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position:50% 0%;
+            }
+            50% {
+                background-position: 50% 100%;
+            }
+            100% {
+                background-position: 50% 0%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="fixed text-white text-sm ml-2 mt-1 select-none "><span>Score: </span><span id="scoreEL">0</span></div>
+    <div id ="frameEL" class="fixed text-white inset-0 flex items-center justify-center">
+        <div class = "gradientbg max-w-md w-full p-6 text-center" >
+            <h1 id="bigscoreEL" class=" text-4xl font-bold">0</h1>
+            <p class="text-sm text-gray-100">Points</p>
+            <div>
+                <br><button id="startgamebtn"class="bg-white text-black w-full py-1.5 rounded-full font-semibold ">Start Game</button>
+            </div>
+        </div>
+    </div>
+    <canvas></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="spacehit.js"></script>
+</body>
+</html>
